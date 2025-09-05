@@ -109,92 +109,119 @@ const PROJECTS = [
   {
     name: "Container Inspection Prediction",
     status: "Case Study",
-    description: "RandomForest-based model to predict customs exam nomination, plus palletized vs non-palletized pipeline.",
-    cover: "https://images.unsplash.com/photo-1605901309584-818e25960a8b?q=80&w=1200&auto=format&fit=crop",
-    tags: ["ML", "RandomForest", "Ports", "Python", "SQL Server"],
-    tech: ["Python", "pandas", "scikit-learn"],
-    links: { demo: "#", code: "#", writeup: "#" }
+    description: "2-level RandomForest: (1) exam nomination, (2) palletized vs non-palletized, with logic-aware preprocessing.",
+    cover: "/assets/covers/container-ml.jpg",
+    tags: ["ML","RandomForest","Ports","Python","SQL Server"],
+    tech: ["Python","pandas","scikit-learn","joblib"],
+    links: {
+      demo: "https://yourusername.github.io/demos/container-exam/",
+      code: "https://github.com/yourusername/container-exam-ml",
+      writeup: "https://your-hashnode-or-pages/blog/container-exam-prediction"
+    }
   },
   {
     name: "Gate Appointment Optimization",
     status: "Demo",
-    description: "Queueing + ML hybrid to reduce truck idle-time and lane congestion using historical lane analytics.",
-    cover: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop",
-    tags: ["Optimization", "Queueing", "Visualization", "Power BI"],
-    tech: ["DAX", "Power BI", "Python"],
-    links: { demo: "#", code: "#", writeup: "#" }
+    description: "Queueing + ML hybrid to reduce idle time and smooth lane congestion using historical lane analytics.",
+    cover: "/assets/covers/gate-appointment.jpg",
+    tags: ["Optimization","Queueing","Visualization","Power BI"],
+    tech: ["Python","Power BI","DAX"],
+    links: {
+      demo: "https://yourusername.github.io/demos/gate-optimizer/",
+      code: "https://github.com/yourusername/gate-optimizer",
+      writeup: "https://your-hashnode-or-pages/blog/gate-optimizer"
+    }
   },
   {
     name: "OCR for Bill of Lading",
     status: "Prototype",
-    description: "Tesseract + layout parser to extract consignee and HS code fields with validation rules.",
-    cover: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1200&auto=format&fit=crop",
-    tags: ["OCR", "NLP", "Logistics"],
-    tech: ["Tesseract", "layoutparser", "FastAPI"],
-    links: { demo: "#", code: "#", writeup: "#" }
-  },
-  {
-    name: "Smart LPG Ordering (WhatsApp)",
-    status: "MVP Concept",
-    description: "Image recognition for cylinder type + location capture and demand prediction for refills.",
-    cover: "https://images.unsplash.com/photo-1602008192805-8b7f74bff0c1?q=80&w=1200&auto=format&fit=crop",
-    tags: ["Computer Vision", "WhatsApp", "IoT"],
-    tech: ["Python", "OpenCV", "Azure"],
-    links: { demo: "#", code: "#", writeup: "#" }
-  },
-  {
-    name: "Truck Lane Idle‑Time Dashboard (Lane‑02/03/04)",
-    status: "Demo",
-    description: "Hour-by-lane analysis with InGate, Barrier, Idle and Total Delay metrics for decisions at a glance.",
-    cover: "https://images.unsplash.com/photo-1506031722384-461b9f5a0912?q=80&w=1200&auto=format&fit=crop",
-    tags: ["Visualization", "Operations", "Power BI"],
-    tech: ["Power BI", "DAX", "SQL"],
-    links: { demo: "#", code: "#", writeup: "#" }
+    description: "Tesseract + layoutparser to extract consignee & HS code with validation rules and human-in-the-loop review.",
+    cover: "/assets/covers/ocr-bol.jpg",
+    tags: ["OCR","NLP","Logistics"],
+    tech: ["Tesseract","layoutparser","FastAPI"],
+    links: {
+      demo: "https://yourusername.github.io/demos/ocr-bol/",
+      code: "https://github.com/yourusername/ocr-bol",
+      writeup: "https://your-hashnode-or-pages/blog/ocr-bill-of-lading"
+    }
   },
   {
     name: "Dedicated Lane Decision Matrix",
     status: "Case Study",
-    description: "Threshold model to decide when to dedicate a lane for Unladen vs Mixed trucks based on traffic composition.",
-    cover: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop",
-    tags: ["Decision Science", "Simulation", "Ports"],
-    tech: ["Python", "NumPy", "Matplotlib"],
-    links: { demo: "#", code: "#", writeup: "#" }
+    description: "Threshold model to switch between Mixed vs Unladen-dedicated lanes based on traffic composition.",
+    cover: "/assets/covers/dedicated-lane.jpg",
+    tags: ["Decision Science","Simulation","Ports"],
+    tech: ["Python","NumPy","Matplotlib"],
+    links: {
+      demo: "https://yourusername.github.io/demos/lane-decision/",
+      code: "https://github.com/yourusername/lane-decision-matrix",
+      writeup: "https://your-hashnode-or-pages/blog/dedicated-lane-matrix"
+    }
   },
   {
-    name: "SME Expense Tracker (Excel Template)",
-    status: "Template",
-    description: "Drop-in Excel sheet for small businesses with categories, dashboards, and basic cashflow insights.",
-    cover: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop",
-    tags: ["Finance", "Excel", "Template"],
-    tech: ["Excel", "Pivot", "SUMIF"],
-    links: { demo: "#", code: "#", writeup: "#" }
-  },
-  {
-    name: "Customer Retention KPI — Explainer",
-    status: "Guide",
-    description: "How to measure retention, set targets, and build a simple cohort view for SMEs.",
-    cover: "https://images.unsplash.com/photo-1559027615-5dd2a9962e44?q=80&w=1200&auto=format&fit=crop",
-    tags: ["KPI", "SME", "Analytics"],
-    tech: ["Python", "Excel", "Power BI"],
-    links: { demo: "#", code: "#", writeup: "#" }
-  },
-  {
-    name: "Payment Gateway Settlement Simulator",
-    status: "Prototype",
-    description: "Educational simulator for authorization, capture, settlement, and reconciliation flows.",
-    cover: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?q=80&w=1200&auto=format&fit=crop",
-    tags: ["FinTech", "Simulation", "ETL"],
-    tech: ["Python", "SQLite", "Streamlit"],
-    links: { demo: "#", code: "#", writeup: "#" }
+    name: "Truck Lane Idle-Time Dashboard",
+    status: "Demo",
+    description: "Hour-by-lane view (Lane-02/03/04): InGate, Barrier, Idle & Total Delay metrics + truck throughput.",
+    cover: "/assets/covers/truck-lane.jpg",
+    tags: ["Visualization","Operations","Power BI"],
+    tech: ["Power BI","DAX","SQL"],
+    links: {
+      demo: "https://app.powerbi.com/...",
+      code: "https://github.com/yourusername/truck-lane-dashboard",
+      writeup: "https://your-hashnode-or-pages/blog/truck-lane-dashboard"
+    }
   },
   {
     name: "Kafka-based Data Pipeline (Ports)",
     status: "Demo",
-    description: "Mock pipeline replacing direct API calls with event streams and asynchronous materialized views.",
-    cover: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop",
-    tags: ["Kafka", "Data Engineering", "Streaming"],
-    tech: ["Kafka", "Python", "PostgreSQL"],
-    links: { demo: "#", code: "#", writeup: "#" }
+    description: "Mock pipeline replacing direct API calls with Kafka event streams and async materialized views.",
+    cover: "/assets/covers/kafka-pipeline.jpg",
+    tags: ["Kafka","Data Engineering","Streaming"],
+    tech: ["Kafka","Python","PostgreSQL"],
+    links: {
+      demo: "https://yourusername.github.io/demos/kafka-pipeline/",
+      code: "https://github.com/yourusername/kafka-ports-demo",
+      writeup: "https://your-hashnode-or-pages/blog/kafka-ports-pipeline"
+    }
+  },
+  {
+    name: "Payment Gateway Settlement Simulator",
+    status: "Prototype",
+    description: "Hands-on simulator for auth → capture → settlement → reconciliation, with sample ledgers.",
+    cover: "/assets/covers/settlement-sim.jpg",
+    tags: ["FinTech","Simulation","ETL"],
+    tech: ["Python","SQLite","Streamlit"],
+    links: {
+      demo: "https://yourusername.github.io/demos/settlement-sim/",
+      code: "https://github.com/yourusername/settlement-simulator",
+      writeup: "https://your-hashnode-or-pages/blog/payment-settlement-sim"
+    }
+  },
+  {
+    name: "SME Expense Tracker (Excel)",
+    status: "Template",
+    description: "Drop-in Excel with categories, dashboards, cashflow KPIs; simple SUMIF/Pivot setup.",
+    cover: "/assets/covers/expense-tracker.jpg",
+    tags: ["Finance","Excel","Template"],
+    tech: ["Excel","Pivot","SUMIF"],
+    links: {
+      demo: "https://yourusername.github.io/assets/templates/expense-tracker.xlsx",
+      code: "https://github.com/yourusername/sme-expense-tracker",
+      writeup: "https://your-hashnode-or-pages/blog/sme-expense-tracker"
+    }
+  },
+  {
+    name: "Smart LPG Ordering (WhatsApp)",
+    status: "MVP Concept",
+    description: "Image recognition for cylinder type + location capture; predicts refill cycles for last-mile delivery.",
+    cover: "/assets/covers/lpg-whatsapp.jpg",
+    tags: ["Computer Vision","WhatsApp","IoT"],
+    tech: ["Python","OpenCV","Azure"],
+    links: {
+      demo: "https://yourusername.github.io/demos/lpg-whatsapp/",
+      code: "https://github.com/yourusername/lpg-whatsapp-mvp",
+      writeup: "https://your-hashnode-or-pages/blog/lpg-whatsapp-mvp"
+    }
   }
 ];
 
@@ -290,3 +317,4 @@ rssBtn.addEventListener('click', ()=> alert('RSS feed coming soon. For now, link
 </script>
 </body>
 </html>
+
