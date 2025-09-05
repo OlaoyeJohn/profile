@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biwa Technology — Analytics & AI Projects</title>
+  <meta name="description" content="A clean, fast portfolio for Analytics & AI projects hosted on GitHub Pages." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0b0e14; --panel:#101623; --card:#0f172a; --text:#e6eefc; --muted:#9fb0d1; --brand:#3b82f6; --ok:#22c55e; --warn:#f59e0b; --bad:#ef4444; --chip:#1e293b; --ring:#3b82f633;
+      --shadow:0 10px 20px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.2);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:radial-gradient(1200px 800px at 80% -10%, #1a2452 0%, transparent 60%),
+                      radial-gradient(1200px 800px at -10% 10%, #0a3b2e 0%, transparent 60%),
+                      var(--bg);
+         color:var(--text);font:16px/1.5 Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    header{display:flex;gap:16px;align-items:center;justify-content:space-between;margin-bottom:20px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{width:40px;height:40px;border-radius:12px;box-shadow:var(--shadow)}
+    .title{font-weight:800;font-size:20px;letter-spacing:.2px}
+    .subtitle{color:var(--muted);font-size:13px;margin-top:-6px}
+
+    .toolbar{display:flex;gap:12px;flex-wrap:wrap}
+    .search{flex:1 1 320px;display:flex;align-items:center;background:var(--panel);border:1px solid #20314a;border-radius:14px;padding:8px 12px;box-shadow:var(--shadow)}
+    .search input{flex:1;border:0;outline:0;background:transparent;color:var(--text);font-size:14px}
+    .chips{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{background:var(--chip);border:1px solid #263247;color:#cfe0ff;padding:6px 10px;border-radius:999px;font-size:12px;cursor:pointer;transition:.15s}
+    .chip.active, .chip:hover{background:#18314f}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+    @media (max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)), var(--card);
+          border:1px solid #1f2a44;border-radius:18px;padding:16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .cover{height:140px;border-radius:12px;background:#0b1222;display:flex;align-items:center;justify-content:center;border:1px solid #1e2a44;position:relative}
+    .cover img{max-width:100%;max-height:100%;object-fit:cover;border-radius:12px}
+    .status{position:absolute;top:10px;left:10px;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:600;border:1px solid #2a3c60;background:#111b30;color:#bcd0ff}
+    .content{padding-top:12px}
+    .name{font-weight:700;font-size:16px;margin:0}
+    .desc{color:var(--muted);font-size:13px;margin:6px 0 10px}
+    .badges{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+    .badge{font-size:11px;background:var(--chip);color:#cfe0ff;border:1px solid #263247;padding:4px 8px;border-radius:999px}
+    .meta{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+    .links{display:flex;gap:10px}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:12px;border:1px solid #294168;background:#0e1a2f;color:#dbe8ff;font-weight:600;font-size:13px;cursor:pointer}
+    .btn:hover{box-shadow:0 0 0 4px var(--ring)}
+
+    footer{margin:36px 0 8px;color:#99adcc;font-size:12px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+    .brandline{opacity:.5}
+      /* Light theme */
+    body[data-theme="light"]{
+      --bg:#f6f8ff; --panel:#ffffff; --card:#ffffff; --text:#0b1220; --muted:#4b5b79; --brand:#0f62fe; --chip:#eef3ff; --ring:#0f62fe33;
+      background:radial-gradient(1200px 800px at 80% -10%, #e6eeff 0%, transparent 60%),
+                  radial-gradient(1200px 800px at -10% 10%, #f3fff7 0%, transparent 60%),
+                  var(--bg);
+    }
+    body[data-theme="light"] .card{border-color:#e6ecff}
+    body[data-theme="light"] .search{border-color:#e5e9f6}
+    body[data-theme="light"] .chip{color:#0b1220;border-color:#d6def3}
+    body[data-theme="light"] .status{background:#edf3ff;color:#0f62fe;border-color:#cfe0ff}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <!-- Replace with your logo file path in the repo (e.g., /assets/biwa-logo.png) -->
+        <img src="https://raw.githubusercontent.com/github/explore/main/topics/github-pages/github-pages.png" alt="Biwa Technology logo"/>
+        <div>
+          <div class="title">Biwa Technology</div>
+          <div class="subtitle">Analytics & AI Projects — practical demos, mockups, and case studies</div>
+        </div>
+      </div>
+      <div class="toolbar" role="search">
+        <div class="search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.3-4.3" stroke="#6b8bbf" stroke-width="2" stroke-linecap="round"/><circle cx="11" cy="11" r="7" stroke="#6b8bbf" stroke-width="2"/></svg>
+          <input id="q" placeholder="Search projects, tech, tags… (e.g. SQL, OCR, Kafka)" />
+        </div>
+        <div class="chips" id="chips"></div>
+        <button id="themeBtn" class="btn" style="white-space:nowrap" aria-pressed="false" aria-label="Toggle theme">🌙 Theme</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="grid" id="grid" aria-live="polite"></section>
+    </main>
+
+    <footer>
+      <div class="brandline">© <span id="year"></span> Biwa Technology. Built with ♥, HTML & JS. Hosted on GitHub Pages.</div>
+      <div class="links">
+        <a class="btn" href="https://github.com/" target="_blank" rel="noopener">View GitHub</a>
+        <a class="btn" href="#" id="rssBtn">RSS</a>
+      </div>
+    </footer>
+  </div>
+
+<script>
+// === 1) Your project data (edit this) ===
+// Add/modify items below. Keep it simple — no build step required.
+const PROJECTS = [
+  {
+    name: "Container Inspection Prediction",
+    status: "Case Study",
+    description: "RandomForest-based model to predict customs exam nomination, plus palletized vs non-palletized pipeline.",
+    cover: "https://images.unsplash.com/photo-1605901309584-818e25960a8b?q=80&w=1200&auto=format&fit=crop",
+    tags: ["ML", "RandomForest", "Ports", "Python", "SQL Server"],
+    tech: ["Python", "pandas", "scikit-learn"],
+    links: { demo: "#", code: "#", writeup: "#" }
+  },
+  {
+    name: "Gate Appointment Optimization",
+    status: "Demo",
+    description: "Queueing + ML hybrid to reduce truck idle-time and lane congestion using historical lane analytics.",
+    cover: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop",
+    tags: ["Optimization", "Queueing", "Visualization", "Power BI"],
+    tech: ["DAX", "Power BI", "Python"],
+    links: { demo: "#", code: "#", writeup: "#" }
+  },
+  {
+    name: "OCR for Bill of Lading",
+    status: "Prototype",
+    description: "Tesseract + layout parser to extract consignee and HS code fields with validation rules.",
+    cover: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?q=80&w=1200&auto=format&fit=crop",
+    tags: ["OCR", "NLP", "Logistics"],
+    tech: ["Tesseract", "layoutparser", "FastAPI"],
+    links: { demo: "#", code: "#", writeup: "#" }
+  },
+  {
+    name: "Smart LPG Ordering (WhatsApp)",
+    status: "MVP Concept",
+    description: "Image recognition for cylinder type + location capture and demand prediction for refills.",
+    cover: "https://images.unsplash.com/photo-1602008192805-8b7f74bff0c1?q=80&w=1200&auto=format&fit=crop",
+    tags: ["Computer Vision", "WhatsApp", "IoT"],
+    tech: ["Python", "OpenCV", "Azure"],
+    links: { demo: "#", code: "#", writeup: "#" }
+  },
+  {
+    name: "Truck Lane Idle‑Time Dashboard (Lane‑02/03/04)",
+    status: "Demo",
+    description: "Hour-by-lane analysis with InGate, Barrier, Idle and Total Delay metrics for decisions at a glance.",
+    cover: "https://images.unsplash.com/photo-1506031722384-461b9f5a0912?q=80&w=1200&auto=format&fit=crop",
+    tags: ["Visualization", "Operations", "Power BI"],
+    tech: ["Power BI", "DAX", "SQL"],
+    links: { demo: "#", code: "#", writeup: "#" }
+  },
+  {
+    name: "Dedicated Lane Decision Matrix",
+    status: "Case Study",
+    description: "Threshold model to decide when to dedicate a lane for Unladen vs Mixed trucks based on traffic composition.",
+    cover: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop",
+    tags: ["Decision Science", "Simulation", "Ports"],
+    tech: ["Python", "NumPy", "Matplotlib"],
+    links: { demo: "#", code: "#", writeup: "#" }
+  },
+  {
+    name: "SME Expense Tracker (Excel Template)",
+    status: "Template",
+    description: "Drop-in Excel sheet for small businesses with categories, dashboards, and basic cashflow insights.",
+    cover: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop",
+    tags: ["Finance", "Excel", "Template"],
+    tech: ["Excel", "Pivot", "SUMIF"],
+    links: { demo: "#", code: "#", writeup: "#" }
+  },
+  {
+    name: "Customer Retention KPI — Explainer",
+    status: "Guide",
+    description: "How to measure retention, set targets, and build a simple cohort view for SMEs.",
+    cover: "https://images.unsplash.com/photo-1559027615-5dd2a9962e44?q=80&w=1200&auto=format&fit=crop",
+    tags: ["KPI", "SME", "Analytics"],
+    tech: ["Python", "Excel", "Power BI"],
+    links: { demo: "#", code: "#", writeup: "#" }
+  },
+  {
+    name: "Payment Gateway Settlement Simulator",
+    status: "Prototype",
+    description: "Educational simulator for authorization, capture, settlement, and reconciliation flows.",
+    cover: "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?q=80&w=1200&auto=format&fit=crop",
+    tags: ["FinTech", "Simulation", "ETL"],
+    tech: ["Python", "SQLite", "Streamlit"],
+    links: { demo: "#", code: "#", writeup: "#" }
+  },
+  {
+    name: "Kafka-based Data Pipeline (Ports)",
+    status: "Demo",
+    description: "Mock pipeline replacing direct API calls with event streams and asynchronous materialized views.",
+    cover: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop",
+    tags: ["Kafka", "Data Engineering", "Streaming"],
+    tech: ["Kafka", "Python", "PostgreSQL"],
+    links: { demo: "#", code: "#", writeup: "#" }
+  }
+];
+
+// === 2) Quick tag list is auto-generated ===
+const TAGS = Array.from(new Set(PROJECTS.flatMap(p => p.tags))).sort();
+
+// === 3) Render helpers ===
+const grid = document.getElementById('grid');
+const chips = document.getElementById('chips');
+const q = document.getElementById('q');
+const yearSpan = document.getElementById('year');
+yearSpan.textContent = new Date().getFullYear();
+
+let activeTag = null;
+let query = '';
+
+function createChip(label){
+  const el = document.createElement('button');
+  el.className = 'chip';
+  el.textContent = label;
+  el.onclick = () => {
+    activeTag = (activeTag === label) ? null : label;
+    render();
+  };
+  return el;
+}
+
+function match(p){
+  const matchesText = !query || (p.name+" "+p.description+" "+p.tags.join(" ")+" "+p.tech.join(" ")).toLowerCase().includes(query);
+  const matchesTag  = !activeTag || p.tags.includes(activeTag);
+  return matchesText && matchesTag;
+}
+
+function card(p){
+  const div = document.createElement('article');
+  div.className = 'card';
+  div.innerHTML = `
+    <div class="cover">
+      ${p.cover ? `<img src="${p.cover}" alt="${p.name} cover"/>` : ''}
+      <span class="status">${p.status || 'Project'}</span>
+    </div>
+    <div class="content">
+      <h3 class="name">${p.name}</h3>
+      <p class="desc">${p.description}</p>
+      <div class="badges">${(p.tags||[]).map(t=>`<span class="badge">${t}</span>`).join('')}</div>
+      <div class="meta">
+        <div style="font-size:12px;color:#8fb0ff">${(p.tech||[]).join(' • ')}</div>
+        <div class="links">
+          ${p.links?.demo ? `<a class="btn" href="${p.links.demo}" target="_blank" rel="noopener">Demo</a>`:''}
+          ${p.links?.code ? `<a class="btn" href="${p.links.code}" target="_blank" rel="noopener">Code</a>`:''}
+          ${p.links?.writeup ? `<a class="btn" href="${p.links.writeup}" target="_blank" rel="noopener">Write‑up</a>`:''}
+        </div>
+      </div>
+    </div>`;
+  return div;
+}
+
+function render(){
+  chips.innerHTML = '';
+  TAGS.forEach(t=>{
+    const c = createChip(t);
+    if(activeTag === t) c.classList.add('active');
+    chips.appendChild(c);
+  });
+
+  grid.innerHTML = '';
+  PROJECTS.filter(match).forEach(p=> grid.appendChild(card(p)));
+}
+
+q.addEventListener('input', (e)=>{ query = e.target.value.trim().toLowerCase(); render(); });
+render();
+
+// Theme toggle with localStorage
+const themeBtn = document.getElementById('themeBtn');
+const THEME_KEY = 'biwa-theme';
+function applyTheme(t){
+  document.body.setAttribute('data-theme', t);
+  themeBtn.textContent = (t === 'light') ? '☀️ Theme' : '🌙 Theme';
+  themeBtn.setAttribute('aria-pressed', t !== 'light');
+}
+const savedTheme = localStorage.getItem(THEME_KEY) || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+applyTheme(savedTheme);
+
+themeBtn.addEventListener('click', ()=>{
+  const next = document.body.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  localStorage.setItem(THEME_KEY, next);
+  applyTheme(next);
+});
+
+// Dumb RSS placeholder so the button is not dead (replace later)
+const rssBtn = document.getElementById('rssBtn');
+rssBtn.addEventListener('click', ()=> alert('RSS feed coming soon. For now, link this to /feed.xml if you add Jekyll.'));
+</script>
+</body>
+</html>
